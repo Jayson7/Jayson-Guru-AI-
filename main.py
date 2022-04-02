@@ -1,5 +1,7 @@
 from http import client
+from tkinter import font
 from turtle import color
+from numpy import size
 import wolframalpha # to answer queries involving math and weather etc.
 import wikipedia # to answer proled queries
 import re #to check for words
@@ -20,30 +22,32 @@ def GreetUsersBasedOnTimeOfTheDay():
     
     hour = int(time.strftime("%H"))
     if hour >= 0 and hour < 12:
-        greet =  "Good Morning I'm Jayson AI, How can I help you"
-        greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='lightgreen', anchor='center').grid(row=0, column=0)
+        greet =  "Good Morning I'm Jayson AI, How can I help you ?"
+        greeter_lable = Label(root, text=greet, font =("Ubuntu", 15,) , fg='lightgreen', anchor='center', pady =20, padx = 20)
         root.configure(bg='black')
     elif hour >= 12 and hour < 18:
-        greet = "Good Afternoon I'm Jayson AI, How can I help you"
-        greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='yellow', bg='black').grid(row=0, column=0)
+        greet = "Good Afternoon I'm Jayson AI, How can I help you ?"
+        greeter_lable = Label(root, text=greet, font =("Ubuntu", 15,) , fg='yellow', bg='black', anchor='center', pady =20, padx = 20)
         root.configure(bg='black')
     else:
-        greet =  "Good Evening I'm Jayson AI, How can I help you"
-        greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='dark').grid(row=0, column=0)
+        greet =  "Good Evening I'm Jayson AI, How can I help you ?"
+        greeter_lable = Label(root, text=greet, font =("Ubuntu", 15,) , fg='dark', anchor='center', pady =20, padx = 20, )
         root.configure(bg='white')
         
 GreetUsersBasedOnTimeOfTheDay()
+greeter_lable.grid(row=0, column=0, columnspan=3)
 
 # dictacte screen size 
-root.geometry("500x500")
-root.minsize(400, 400)
+root.geometry("600x600")
+root.minsize(550, 550)
 root.maxsize(700, 700)
 root.title('Jayson Guru AI')
 
+entry = Entry(root, width=30, borderwidth=7 )
+entry.grid(row=0, column=0, columnspan=3, padx=20, pady=40)
 
 # while True:  
     #pass
-
 ''' input box with PySimpleGUI  which can take text input from the user''' 
 
 
