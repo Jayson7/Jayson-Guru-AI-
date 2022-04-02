@@ -2,8 +2,12 @@ from http import client
 import wolframalpha
 import wikipedia
 
-app_id = "G4UAUE-K5JX8XPVYX"
+app_id = "your wolframalpha app id"
 client = wolframalpha.Client(app_id)
+
+
+
+
 
 # res = client.query("who is the president of the United States?")
 # res = client.query("what is the result of 2000 * 3420199")
