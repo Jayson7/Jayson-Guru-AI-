@@ -17,15 +17,22 @@ def GreetUsersBasedOnTimeOfTheDay():
     global greet
     hour = int(time.strftime("%H"))
     if hour >= 0 and hour < 12:
-        greet =  "Good Morning"
+        greet =  "Good Morning I'm Jayson AI, How can I help you"
     elif hour >= 12 and hour < 18:
-        greet = "Good Afternoon"
+        greet = "Good Afternoon I'm Jayson AI, How can I help you"
     else:
-        greet =  "Good Evening"
+        greet =  "Good Evening I'm Jayson AI, How can I help you"
 
 GreetUsersBasedOnTimeOfTheDay()
+greeter_lable = Label(root, text=greet).grid(row=0, column=0)
 
+# dictacte screen size 
 root.geometry("500x500")
+root.minsize(400, 400)
+root.maxsize(700, 700)
+root.title('Jayson Guru AI')
+
+
 # while True:  
     #pass
 
