@@ -12,39 +12,42 @@ client = wolframalpha.Client(app_id)
 # initialize Tk
 root = Tk()
 
-while True:  
-#     pass
-
-''' input box with PySimpleGUI  which can take text input from the user''' 
-
 # create a greeter function
 def GreetUsersBasedOnTimeOfTheDay():
+    global greet
     hour = int(time.strftime("%H"))
     if hour >= 0 and hour < 12:
-        print ("Good Morning")
+        greet =  "Good Morning"
     elif hour >= 12 and hour < 18:
-        print ("Good Afternoon")
+        greet = "Good Afternoon"
     else:
-        print ("Good Evening")
+        greet =  "Good Evening"
 
 GreetUsersBasedOnTimeOfTheDay()
 
+root.geometry("500x500")
+# while True:  
+    #pass
+
+''' input box with PySimpleGUI  which can take text input from the user''' 
+
+
+    
+
+
+
+    # this section is for words manipulation and extraction 
+        # REG check for the words
+        # re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
 
 
-# this section is for words manipulation and extraction 
-    # REG check for the words
-    # re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
+    # res = client.query("who is the muhammad buhari?")
 
-
-
-
-# res = client.query("who is the muhammad buhari?")
-
-# for pod in res.pods:
-#     for sub in pod.subpods:
-#         print(sub.plaintext)
+    # for pod in res.pods:
+    #     for sub in pod.subpods:
+    #         print(sub.plaintext)
 
 
 
