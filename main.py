@@ -25,12 +25,13 @@ def GreetUsersBasedOnTimeOfTheDay():
         root.configure(bg='black')
     elif hour >= 12 and hour < 18:
         greet = "Good Afternoon I'm Jayson AI, How can I help you"
-        greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='yellow').grid(row=0, column=0)
-        
+        greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='yellow', bg='black').grid(row=0, column=0)
+        root.configure(bg='black')
     else:
         greet =  "Good Evening I'm Jayson AI, How can I help you"
         greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='dark').grid(row=0, column=0)
-
+        root.configure(bg='white')
+        
 GreetUsersBasedOnTimeOfTheDay()
 
 # dictacte screen size 
