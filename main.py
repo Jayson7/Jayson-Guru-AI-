@@ -40,11 +40,11 @@ greeter_lable.grid(row=0, column=0, columnspan=3)
 # dictacte screen size 
 root.geometry("600x600")
 root.minsize(550, 550)
-root.maxsize(700, 700)
+root.maxsize(550, 550)
 root.title('Jayson Guru AI')
 
-entry = Entry(root, width=30, borderwidth=7 )
-entry.grid(row=0, column=0, columnspan=3, padx=20, pady=40)
+entry = Entry(root, width=50, borderwidth=5 )
+entry.grid(row=2, column=0, columnspan=3, padx=20, pady=100, ippady=10)
 
 # while True:  
     #pass
