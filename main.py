@@ -1,4 +1,5 @@
 from http import client
+from turtle import color
 import wolframalpha # to answer queries involving math and weather etc.
 import wikipedia # to answer proled queries
 import re #to check for words
@@ -15,16 +16,22 @@ root = Tk()
 # create a greeter function
 def GreetUsersBasedOnTimeOfTheDay():
     global greet
+    global greeter_lable
+    
     hour = int(time.strftime("%H"))
     if hour >= 0 and hour < 12:
         greet =  "Good Morning I'm Jayson AI, How can I help you"
+        greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='lightgreen').grid(row=0, column=0)
+        root.configure(bg='black')
     elif hour >= 12 and hour < 18:
         greet = "Good Afternoon I'm Jayson AI, How can I help you"
+        greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='yellow').grid(row=0, column=0)
+        
     else:
         greet =  "Good Evening I'm Jayson AI, How can I help you"
+        greeter_lable = Label(root, text=greet, font ="Ubuntu", fg='dark').grid(row=0, column=0)
 
 GreetUsersBasedOnTimeOfTheDay()
-greeter_lable = Label(root, text=greet).grid(row=0, column=0)
 
 # dictacte screen size 
 root.geometry("500x500")
