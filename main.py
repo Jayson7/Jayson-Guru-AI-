@@ -1,11 +1,15 @@
 from http import client
-import wolframalpha
-import wikipedia
+import wolframalpha #
+import wikipedia # to answer proled queries
+import re #to check for words
+import PySimpleGUI as sg
 
-app_id = "your wolframalpha app id"
+app_id = "G4UAUE-K5JX8XPVYX"
 client = wolframalpha.Client(app_id)
 
 
+
+re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
 
 
