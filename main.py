@@ -6,7 +6,7 @@ import PySimpleGUI as sg # for our graphical user interface
 import datetime # to get the datetime
 import time 
 # save  app id for wolframalpha
-app_id = "G4UAUE-K5JX8XPVYX"
+app_id = "YOUR_APP_ID"
 client = wolframalpha.Client(app_id)
 
 ''' input box with PySimpleGUI  which can take text input from the user''' 
