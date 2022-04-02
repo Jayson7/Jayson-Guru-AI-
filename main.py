@@ -37,23 +37,23 @@ def GreetUsersBasedOnTimeOfTheDay():
         root.configure(bg='white')
         
 GreetUsersBasedOnTimeOfTheDay()
-greeter_lable.grid(row=0, column=1, columnspan=3)
+greeter_lable.grid(row=0, column=3, columnspan=3, sticky=W)
 
 # dictacte screen size 
-root.geometry("600x600")
-root.minsize(550, 550)
-root.maxsize(550, 550)
+root.geometry("540x540")
+root.minsize(540, 540)
+root.maxsize(540, 540)
 root.title('Jayson Guru AI')
 # logo widget
 
-my_img = ImageTk.PhotoImage(Image.open('./4.jpg').resize((150, 150), Image.ANTIALIAS))
+my_img = ImageTk.PhotoImage(Image.open('./4.jpg').resize((200, 150), Image.ANTIALIAS))
 my_label = Label(image=my_img)
 """ make the image fit the label """             
-my_label.grid(row=1, column=1, columnspan=3)
+my_label.grid(row=1, column=3, columnspan=3)
       
 # input widget
 entry = Entry(root, width=30, borderwidth=4, font=('monospace', 17) )
-entry.grid(row=2, column=1, columnspan=3, padx=10, pady=60, ipady=6)
+entry.grid(row=2, column=3, columnspan=3, padx=10, pady=60, ipady=6)
 # entry placeholder text
 entry.insert(0, "Ask me anything") 
 def clear_placeholder(e):
@@ -62,8 +62,25 @@ def clear_placeholder(e):
     
 entry.bind("<FocusIn>",  clear_placeholder)
 
+""" crate a function to get the input from the user """ 
+def get_input():
+    global input_text
+    input_text = entry.get()
+    print(input_text)
 
+""" create clear placeholder function """
+def clear_placeholder():
+    entry.delete(0, END)
+    entry.config(fg='black')
 
+""" create a button to get the input from the user """
+button_submit = Button(root, text="Ask", font=('monospace', 12), command=get_input, bg='lightgreen', fg='black', padx=10, pady=10)
+""" place the button on the screen """
+button_submit.grid(row=3, column=2, columnspan=3, ipady=10, ipadx=10)
+""" create a button to clear the input """
+button_clear = Button(root, text="Clear", font=('monospace', 12), command=clear_placeholder, bg='lightgreen', fg='black', padx=10, pady=10)
+""" place the button on the screen """
+button_clear.grid(row=3, column=4, columnspan=3, ipady=10, ipadx=10)
 
 # while True:  
     #pass
