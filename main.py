@@ -67,7 +67,8 @@ def get_input():
     global input_text
     input_text = entry.get()
     print(input_text)
-
+    input_checker()
+    
 """ create clear placeholder function """
 def clear_placeholder():
     entry.delete(0, END)
@@ -86,12 +87,13 @@ button_clear.config(relief=RIDGE)
 """ button_submit rounded corners """
 button_submit.config(relief=RIDGE)
 
-""" search for input_text in wolframalpha """  
-res = client.query(input_text)
-for pod in res.pods:
-    for sub in pod.subpods:
-        print(sub.plaintext)
-        
+""" search for input_text in wolframalpha """
+def input_checker():  
+    res = client.query(input_text)
+    for pod in res.pods:
+        for sub in pod.subpods:
+            print(sub[0].plaintext)
+
 
 
 
