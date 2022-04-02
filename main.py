@@ -90,10 +90,32 @@ button_submit.config(relief=RIDGE)
 """ search for input_text in wolframalpha """
 def input_checker():  
     res = client.query(input_text)
-    for pod in res.pods:
-        for sub in pod.subpods:
-            print(sub[0].plaintext)
-
+    try:
+        answer = next(res.results).text
+        print(answer) 
+        """ show answer in a popup """
+        popup_answer = Toplevel()
+        popup_answer.geometry("500x500")
+        popup_answer.minsize(500, 500)
+        popup_answer.maxsize(500, 500)
+        popup_answer.title('Jayson Guru AI')
+        popup_answer.configure(bg='black')
+        answer_label = Label(popup_answer, text=answer, font =("Ubuntu", 15,) , fg='white', bg='black', anchor='center', pady =20, padx = 20)
+        answer_label.grid(row=1, column=3, columnspan=3)
+    except:
+        print("No results found")
+        """ if answer doen't exist, show this in a popup """
+        popup_answer = Toplevel()
+        """ fix  popup to the size of answer"""
+        popup_answer.geometry("200x70")
+        popup_answer.maxsize(200, 70) 
+        popup_answer.title('Jayson Guru AI')
+        popup_answer.configure(bg='black')
+        answer_label = Label(popup_answer, text="No results found", font =("Ubuntu", 15,) , fg='red', bg='black', anchor='center', pady =20, padx = 20)
+        answer_label.grid(row=1, column=4, columnspan=4)
+            
+    
+        
 
 
 
