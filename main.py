@@ -11,7 +11,7 @@ import time
 from PIL import ImageTk, Image
 
 # save  app id for wolframalpha
-app_id = "G4UAUE-K5JX8XPVYX"
+app_id = ""
 client = wolframalpha.Client(app_id)
 
 # initialize Tk
@@ -43,7 +43,7 @@ greeter_lable.grid(row=1, column=3, columnspan=3)
 root.geometry("500x500")
 root.minsize(500, 500)
 root.maxsize(500, 500)
-root.title('Jayson Guru AI')
+root.title('Jayson AI')
 # logo widget
 
 my_img = ImageTk.PhotoImage(Image.open('./4.jpg').resize((200, 150), Image.ANTIALIAS))
@@ -98,7 +98,7 @@ def input_checker():
         popup_answer.geometry("500x500")
         popup_answer.minsize(500, 500)
         popup_answer.maxsize(500, 500)
-        popup_answer.title('Jayson Guru AI')
+        popup_answer.title('Jayson AI')
         popup_answer.configure(bg='black')
         answer_label = Label(popup_answer, text=answer, font =("Ubuntu", 15,) , fg='white', bg='black', anchor='center', pady =20, padx = 20)
         answer_label.grid(row=1, column=3, columnspan=3)
@@ -109,7 +109,7 @@ def input_checker():
         """ fix  popup to the size of answer"""
         popup_answer.geometry("200x70")
         popup_answer.maxsize(200, 70) 
-        popup_answer.title('Jayson Guru AI')
+        popup_answer.title('Jayson AI')
         popup_answer.configure(bg='black')
         answer_label = Label(popup_answer, text="No results found", font =("Ubuntu", 15,) , fg='red', bg='black', anchor='center', pady =20, padx = 20)
         answer_label.grid(row=1, column=4, columnspan=4)
