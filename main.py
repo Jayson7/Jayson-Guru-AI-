@@ -37,7 +37,7 @@ def GreetUsersBasedOnTimeOfTheDay():
         root.configure(bg='white')
         
 GreetUsersBasedOnTimeOfTheDay()
-greeter_lable.grid(row=0, column=3, columnspan=3)
+greeter_lable.grid(row=0, column=1, columnspan=3)
 
 # dictacte screen size 
 root.geometry("600x600")
@@ -49,12 +49,18 @@ root.title('Jayson Guru AI')
 my_img = ImageTk.PhotoImage(Image.open('./4.jpg').resize((150, 150), Image.ANTIALIAS))
 my_label = Label(image=my_img)
 """ make the image fit the label """             
-my_label.grid(row=1, column=0, columnspan=3)
+my_label.grid(row=1, column=1, columnspan=3)
       
 # input widget
 entry = Entry(root, width=30, borderwidth=4, font=('monospace', 17) )
-entry.grid(row=2, column=0, columnspan=3, padx=10, pady=60, ipady=6)
-# entry placeholder text     #  
+entry.grid(row=2, column=1, columnspan=3, padx=10, pady=60, ipady=6)
+# entry placeholder text
+entry.insert(0, "Ask me anything") 
+def clear_placeholder(e):
+    entry.delete(0, END)
+    entry.config(fg='black') 
+    
+entry.bind("<FocusIn>",  clear_placeholder)
 
 
 
