@@ -1,17 +1,15 @@
-from http import client
-from tkinter import font
+
+import datetime  # to get the datetime
+import time
+from tkinter import *  # for our graphical user interface
 from turtle import color, width
-from numpy import delete, size
-import wolframalpha # to answer queries involving math and weather etc.
-import wikipedia # to answer proled queries
-import re #to check for words
-from tkinter import * # for our graphical user interface
-import datetime # to get the datetime
-import time 
-from PIL import ImageTk, Image
+
+import wikipedia  # to answer proled queries
+import wolframalpha  # to answer queries involving math and weather etc.
+from PIL import Image, ImageTk
 
 # save  app id for wolframalpha
-app_id = ""
+app_id = "G4UAUE-K5JX8XPVYX"
 client = wolframalpha.Client(app_id)
 
 # initialize Tk
@@ -41,8 +39,8 @@ greeter_lable.grid(row=1, column=3, columnspan=3)
 
 # dictacte screen size 
 root.geometry("500x500")
-root.minsize(500, 500)
-root.maxsize(500, 500)
+root.minsize(550, 550)
+root.maxsize(550, 550)
 root.title('Jayson AI')
 # logo widget
 
@@ -93,6 +91,14 @@ def input_checker():
     try:
         answer = next(res.results).text
         print(answer) 
+        
+        if answer == None:
+            wikipedia_ans = wikipedia.summary(input_text, sentences=2)
+            print(wikipedia_ans)
+            answer = wikipedia_ans
+        else:
+            pass
+        
         """ show answer in a popup """
         popup_answer = Toplevel()
         popup_answer.geometry("500x500")
