@@ -9,7 +9,7 @@ import wolframalpha  # to answer queries involving math and weather etc.
 from PIL import Image, ImageTk
 
 # save  app id for wolframalpha
-app_id = "G4UAUE-K5JX8XPVYX"
+app_id = "YOUR_APP_ID"
 client = wolframalpha.Client(app_id)
 
 # initialize Tk
@@ -121,8 +121,5 @@ def input_checker():
         answer_label.grid(row=1, column=4, columnspan=4)
             
     
-        
-
-
 
 root.mainloop()        
