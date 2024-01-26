@@ -44,7 +44,11 @@ root.maxsize(550, 550)
 root.title('Jayson AI')
 # logo widget
 
-my_img = ImageTk.PhotoImage(Image.open('./4.jpg').resize((200, 150), Image.ANTIALIAS))
+my_img = ImageTk.PhotoImage(Image.open('./4.jpg').resize((200, 150), Image.LANCZOS))
+
+
+
+
 my_label = Label(image=my_img)
 """ make the image fit the label """             
 my_label.grid(row=5, column=3, columnspan=3, pady=20)
